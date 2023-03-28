@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="8.875" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-03-27T11:07:38" tests="0" file="cypress/e2e/credential/create-github-generic-cred.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="create git generic credential" timestamp="2023-03-27T11:07:38" tests="3" time="8.859" failures="0">
+    <testcase name="create git generic credential should be able open git form" time="3.456" classname="should be able open git form">
+    </testcase>
+    <testcase name="create git generic credential should be able fill git form" time="1.576" classname="should be able fill git form">
+    </testcase>
+    <testcase name="create git generic credential should be able create another git cred" time="1.628" classname="should be able create another git cred">
+    </testcase>
+  </testsuite>
+</testsuites>

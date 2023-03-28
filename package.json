@@ -1,0 +1,44 @@
+{
+  "name": "junit-to-sonar-generic-execution",
+  "version": "1.0.0",
+  "bin": "dist/index.js",
+  "description": "A tool to convert JUnit XML files into Sonar Generic Execution format",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "node dist/index.js --dir test/junit --output test/sonar/test-report.xml",
+    "dev": "ts-node index.ts",
+    "prepublishOnly": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikhilVerma/junit-to-sonar-generic-execution.git"
+  },
+  "author": {
+    "name": "Nikhil Verma",
+    "url": "https://github.com/NikhilVerma"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NikhilVerma/junit-to-sonar-generic-execution/issues"
+  },
+  "homepage": "https://github.com/NikhilVerma/junit-to-sonar-generic-execution#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "@types/prettier": "^2.7.2",
+    "@types/xml2js": "^0.4.11",
+    "@types/yargs": "^17.0.24",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "glob": "^9.3.2",
+    "xml2js": "^0.4.23",
+    "yargs": "^17.7.1"
+  },
+  "files": [
+    "dist",
+    "index.ts"
+  ]
+}

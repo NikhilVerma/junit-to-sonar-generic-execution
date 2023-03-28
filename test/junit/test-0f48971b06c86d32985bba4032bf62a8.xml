@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.744" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-03-09T16:55:53" tests="0" file="cypress/e2e/auth/signup.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="signup" timestamp="2023-03-09T16:55:53" tests="3" time="5.732" failures="0">
+    <testcase name="signup should show an error message on invalid email input" time="3.844" classname="should show an error message on invalid email input">
+    </testcase>
+    <testcase name="signup should show an error message on empty password input" time="0.830" classname="should show an error message on empty password input">
+    </testcase>
+    <testcase name="signup should show an server side error" time="1.012" classname="should show an server side error">
+    </testcase>
+  </testsuite>
+</testsuites>

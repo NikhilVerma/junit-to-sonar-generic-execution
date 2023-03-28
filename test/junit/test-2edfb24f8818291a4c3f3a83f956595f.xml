@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.548" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-03-15T06:01:08" tests="0" file="cypress/e2e/project/create-project.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="create project" timestamp="2023-03-15T06:01:08" tests="4" time="5.533" failures="0">
+    <testcase name="create project should be able to open close create modal" time="2.609" classname="should be able to open close create modal">
+    </testcase>
+    <testcase name="create project should show form error" time="0.409" classname="should show form error">
+    </testcase>
+    <testcase name="create project should show project description field" time="1.318" classname="should show project description field">
+    </testcase>
+    <testcase name="create project should create a project" time="1.164" classname="should create a project">
+    </testcase>
+  </testsuite>
+</testsuites>

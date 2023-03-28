@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testExecutions version="1">
+  <file path="cypress/e2e/credential/create-github-generic-cred.cy.ts">
+    <testCase name="create git generic credential should be able open git form" duration="3.456"/>
+    <testCase name="create git generic credential should be able fill git form" duration="1.576"/>
+    <testCase name="create git generic credential should be able create another git cred" duration="1.628"/>
+  </file>
+  <file path="cypress/e2e/project/create-project.cy.ts">
+    <testCase name="create project should be able to open close create modal" duration="2.609"/>
+    <testCase name="create project should show form error" duration="0.409"/>
+    <testCase name="create project should show project description field" duration="1.318"/>
+    <testCase name="create project should create a project" duration="1.164"/>
+  </file>
+  <file path="cypress/e2e/home-page/homePage.cy.ts">
+    <testCase name="homePage view should show counts of primary entities" duration="3.352"/>
+    <testCase name="homePage view should show one project" duration="0.007"/>
+    <testCase name="homePage view should increase the project count when new project is added" duration="0.211"/>
+    <testCase name="homePage view should increase the env count when new env is added" duration="0.210"/>
+  </file>
+  <file path="cypress/e2e/credential/create-docker-generic-cred.cy.ts">
+    <testCase name="create docker generic credential should be able open docker generic form" duration="2.975"/>
+    <testCase name="create docker generic credential should be able fill docker generic form" duration="2.066"/>
+  </file>
+  <file path="cypress/e2e/auth/signup.cy.ts">
+    <testCase name="signup should show an error message on invalid email input" duration="4.420"/>
+    <testCase name="signup should show an error message on empty password input" duration="0.805"/>
+    <testCase name="signup should show an server side error" duration="1.001"/>
+  </file>
+  <file path="cypress/e2e/credential/assign-git-cred.cy.ts">
+    <testCase name="Assign and unassign git credential should open project detail page where project action button exists" duration="3.401"/>
+    <testCase name="Assign and unassign git credential should be able open add new Github container creds form when no credentials added" duration="0.409"/>
+    <testCase name="Assign and unassign git credential should be able open add new GitLab container creds form when no credentials added" duration="0.219"/>
+    <testCase name="Assign and unassign git credential should be able open add new Git container creds form when no credentials added" duration="0.409"/>
+    <testCase name="Assign and unassign git credential should be able to assign github credentials" duration="1.298"/>
+    <testCase name="Assign and unassign git credential should be able to unassign github container credential" duration="1.251"/>
+    <testCase name="Assign and unassign git credential should be able to assign GitLab credentials" duration="1.240"/>
+    <testCase name="Assign and unassign git credential should be able to unassign GitLab container credential" duration="1.237"/>
+    <testCase name="Assign and unassign git credential should be able to assign Git credentials" duration="1.149"/>
+    <testCase name="Assign and unassign git credential should be able to unassign Git container credential" duration="1.227"/>
+  </file>
+  <file path="cypress/e2e/auth/signup.cy.ts">
+    <testCase name="signup should show an error message on invalid email input" duration="3.844"/>
+    <testCase name="signup should show an error message on empty password input" duration="0.830"/>
+    <testCase name="signup should show an server side error" duration="1.012"/>
+  </file>
+  <file path="cypress/e2e/project/create-project.cy.ts">
+    <testCase name="create project should be able to open close create modal" duration="0.000">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[data-qa-project-create-ddddd]`, but never found it.">AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-qa-project-create-ddddd]`, but never found it.
+    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/e2e/project/create-project.cy.ts:33692:48)</failure>
+    </testCase>
+    <testCase name="create project should show form error" duration="0.410"/>
+    <testCase name="create project should show project description field" duration="1.308"/>
+    <testCase name="create project should create a project" duration="1.194"/>
+  </file>
+  <file path="cypress/e2e/auth/signup.cy.ts">
+    <testCase name="signup should show an error message on invalid email input" duration="3.182"/>
+    <testCase name="signup should show an error message on empty password input" duration="0.748"/>
+    <testCase name="signup should show an server side error" duration="0.917"/>
+  </file>
+</testExecutions>

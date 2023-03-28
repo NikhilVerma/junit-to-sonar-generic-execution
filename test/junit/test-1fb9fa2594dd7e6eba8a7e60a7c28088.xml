@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="16.559" tests="10" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-03-27T11:07:02" tests="0" file="cypress/e2e/credential/assign-git-cred.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Assign and unassign git credential" timestamp="2023-03-27T11:07:02" tests="10" time="16.545" failures="0">
+    <testcase name="Assign and unassign git credential should open project detail page where project action button exists" time="3.401" classname="should open project detail page where project action button exists">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able open add new Github container creds form when no credentials added" time="0.409" classname="should be able open add new Github container creds form when no credentials added">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able open add new GitLab container creds form when no credentials added" time="0.219" classname="should be able open add new GitLab container creds form when no credentials added">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able open add new Git container creds form when no credentials added" time="0.409" classname="should be able open add new Git container creds form when no credentials added">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able to assign github credentials" time="1.298" classname="should be able to assign github credentials">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able to unassign github container credential" time="1.251" classname="should be able to unassign github container credential">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able to assign GitLab credentials" time="1.240" classname="should be able to assign GitLab credentials">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able to unassign GitLab container credential" time="1.237" classname="should be able to unassign GitLab container credential">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able to assign Git credentials" time="1.149" classname="should be able to assign Git credentials">
+    </testcase>
+    <testcase name="Assign and unassign git credential should be able to unassign Git container credential" time="1.227" classname="should be able to unassign Git container credential">
+    </testcase>
+  </testsuite>
+</testsuites>

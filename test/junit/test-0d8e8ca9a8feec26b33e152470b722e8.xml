@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="10.726" tests="4" failures="1">
+  <testsuite name="Root Suite" timestamp="2023-03-28T09:30:48" tests="0" file="cypress/e2e/project/create-project.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="create project" timestamp="2023-03-28T09:30:48" tests="4" time="10.711" failures="1">
+    <testcase name="create project should be able to open close create modal" time="0.000" classname="should be able to open close create modal">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[data-qa-project-create-ddddd]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-qa-project-create-ddddd]`, but never found it.
+    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/e2e/project/create-project.cy.ts:33692:48)]]></failure>
+    </testcase>
+    <testcase name="create project should show form error" time="0.410" classname="should show form error">
+    </testcase>
+    <testcase name="create project should show project description field" time="1.308" classname="should show project description field">
+    </testcase>
+    <testcase name="create project should create a project" time="1.194" classname="should create a project">
+    </testcase>
+  </testsuite>
+</testsuites>
