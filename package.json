@@ -1,6 +1,6 @@
 {
   "name": "junit-to-sonar-generic-execution",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": "dist/index.js",
   "description": "A tool to convert JUnit XML files into Sonar Generic Execution format",
   "main": "dist/index.js",

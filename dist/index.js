@@ -7,6 +7,7 @@ const fs_1 = __importDefault(require("fs"));
 const xml2js_1 = __importDefault(require("xml2js"));
 const glob_1 = __importDefault(require("glob"));
 const yargs_1 = __importDefault(require("yargs"));
+const path_1 = __importDefault(require("path"));
 const argv = yargs_1.default
     .usage("Usage: npx junit-to-sonar-generic-execution [options]")
     .option("dir", {
@@ -24,7 +25,7 @@ const argv = yargs_1.default
     .help()
     .alias("help", "h")
     .parseSync();
-const xmlFiles = glob_1.default.sync(`${argv.dir}/**/*.xml`);
+const xmlFiles = glob_1.default.sync(`${path_1.default.resolve(__dirname, argv.dir)}/**/*.xml`);
 if (xmlFiles.length === 0) {
     console.error(`No JUnit XML result files found in ${argv.dir}`);
     process.exit(1);
@@ -39,12 +40,13 @@ const testExecutions = {
 };
 xmlFiles.forEach((file) => {
     xml2js_1.default.parseString(fs_1.default.readFileSync(file, "utf-8"), (err, result) => {
+        var _a;
         if (err) {
-            console.error("XML Parsing error", err);
+            console.error("XML Parsing error", file, err);
             return;
         }
-        if (!result.testsuites) {
-            console.error("No suites in XML");
+        if (!((_a = result.testsuites) === null || _a === void 0 ? void 0 : _a.testsuite)) {
+            console.error("No suites in XML", file, result);
             return;
         }
         const rootSuite = result.testsuites.testsuite.shift();

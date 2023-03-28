@@ -2,6 +2,7 @@ import fs from "fs";
 import xml2js from "xml2js";
 import glob from "glob";
 import yargs from "yargs";
+import path from "path";
 
 const argv = yargs
     .usage("Usage: npx junit-to-sonar-generic-execution [options]")
@@ -21,7 +22,7 @@ const argv = yargs
     .alias("help", "h")
     .parseSync();
 
-const xmlFiles = glob.sync(`${argv.dir}/**/*.xml`);
+const xmlFiles = glob.sync(`${path.resolve(__dirname, argv.dir)}/**/*.xml`);
 
 if (xmlFiles.length === 0) {
     console.error(`No JUnit XML result files found in ${argv.dir}`);
@@ -40,12 +41,12 @@ const testExecutions: SonarGenericExecutionFormat = {
 xmlFiles.forEach((file) => {
     xml2js.parseString(fs.readFileSync(file, "utf-8"), (err, result: JUnitXMLFormat) => {
         if (err) {
-            console.error("XML Parsing error", err);
+            console.error("XML Parsing error", file, err);
             return;
         }
 
-        if (!result.testsuites) {
-            console.error("No suites in XML");
+        if (!result.testsuites?.testsuite) {
+            console.error("No suites in XML", file, result);
             return;
         }
 
@@ -104,7 +105,7 @@ console.log(`Sonar Generic execution data written to ${argv.output}`);
  */
 
 type JUnitXMLFormat = {
-    testsuites: {
+    testsuites?: {
         $: {
             name: string;
             tests: string;
@@ -112,7 +113,7 @@ type JUnitXMLFormat = {
             errors: string;
             time: string;
         };
-        testsuite: Array<{
+        testsuite?: Array<{
             $: {
                 name: string;
                 tests: string;
