@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import fs from "fs";
 import xml2js from "xml2js";
 import glob from "glob";
@@ -22,7 +24,7 @@ const argv = yargs
     .alias("help", "h")
     .parseSync();
 
-const xmlFiles = glob.sync(`${path.resolve(__dirname, argv.dir)}/**/*.xml`);
+const xmlFiles = glob.sync(`${path.resolve(process.cwd(), argv.dir)}/**/*.xml`);
 
 if (xmlFiles.length === 0) {
     console.error(`No JUnit XML result files found in ${argv.dir}`);
@@ -69,11 +71,12 @@ xmlFiles.forEach((file) => {
                 const newTestCase: SonarGenericExecutionFormatFileTestCase = {
                     $: {
                         name: testcase.$.name,
-                        duration: testcase.$.time,
+                        duration: Math.round(Number(testcase.$.time) * 1000),
                     },
                 };
 
                 if (testcase.failure) {
+                    newTestCase.$.status = "failure";
                     newTestCase.failure = {
                         $: {
                             message: testcase.failure[0].$.message,
@@ -96,7 +99,7 @@ const builder = new xml2js.Builder({
 
 const xml = builder.buildObject(testExecutions);
 
-fs.writeFileSync(argv.output, xml);
+fs.writeFileSync(path.resolve(process.cwd(), argv.output), xml);
 
 console.log(`Sonar Generic execution data written to ${argv.output}`);
 
@@ -164,7 +167,8 @@ type SonarGenericExecutionFormatFile = {
 type SonarGenericExecutionFormatFileTestCase = {
     $: {
         name: string;
-        duration: string;
+        duration: number;
+        status?: "failure" | "error" | "skipped";
     };
     failure?: {
         $: {

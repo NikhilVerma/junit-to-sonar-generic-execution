@@ -1,13 +1,14 @@
 {
   "name": "junit-to-sonar-generic-execution",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "bin": "dist/index.js",
   "description": "A tool to convert JUnit XML files into Sonar Generic Execution format",
   "main": "dist/index.js",
   "scripts": {
-    "test": "node dist/index.js --dir test/junit --output test/sonar/test-report.xml",
+    "test": "pnpm run build && node dist/index.js --dir test/junit --output test/sonar/test-report.xml",
     "dev": "ts-node index.ts",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "pnpm build",
+    "build": "rm -rf dist && tsc && chmod +x dist/index.js"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -25,7 +26,7 @@ const argv = yargs_1.default
     .help()
     .alias("help", "h")
     .parseSync();
-const xmlFiles = glob_1.default.sync(`${path_1.default.resolve(__dirname, argv.dir)}/**/*.xml`);
+const xmlFiles = glob_1.default.sync(`${path_1.default.resolve(process.cwd(), argv.dir)}/**/*.xml`);
 if (xmlFiles.length === 0) {
     console.error(`No JUnit XML result files found in ${argv.dir}`);
     process.exit(1);
@@ -66,10 +67,11 @@ xmlFiles.forEach((file) => {
                 const newTestCase = {
                     $: {
                         name: testcase.$.name,
-                        duration: testcase.$.time,
+                        duration: Math.round(Number(testcase.$.time) * 1000),
                     },
                 };
                 if (testcase.failure) {
+                    newTestCase.$.status = "failure";
                     newTestCase.failure = {
                         $: {
                             message: testcase.failure[0].$.message,
@@ -87,6 +89,6 @@ const builder = new xml2js_1.default.Builder({
     cdata: true,
 });
 const xml = builder.buildObject(testExecutions);
-fs_1.default.writeFileSync(argv.output, xml);
+fs_1.default.writeFileSync(path_1.default.resolve(process.cwd(), argv.output), xml);
 console.log(`Sonar Generic execution data written to ${argv.output}`);
 //# sourceMappingURL=index.js.map
